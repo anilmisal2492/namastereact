@@ -10,6 +10,7 @@ import AboutUs from "./components/AboutUs";
 import Error from "./components/Error";
 import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu";
+import UserClass from "./components/UserClass";
 
 const AppLayout = () => (
   <div>
