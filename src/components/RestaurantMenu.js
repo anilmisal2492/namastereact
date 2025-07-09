@@ -1,18 +1,9 @@
 import { useEffect, useState } from "react";
 import { SWIGY_URL } from "../utils/constant";
+import useRestMenu from "../utils/useRestMenu";
 
 const RestaurantMenu = () => {
-  const [restData, setRestData] = useState(null);
-  useEffect(() => {
-    fetchRest();
-  }, []);
-  const fetchRest = async () => {
-    const data = await fetch(SWIGY_URL);
-    const dataJson = await data.json();
-    console.log("dataJson", dataJson);
-    setRestData(dataJson);
-  };
-  console.log(restData?.info?.name);
+  const restData = useRestMenu();
   return (
     <div>
       <h1>Restaurant Menu</h1>

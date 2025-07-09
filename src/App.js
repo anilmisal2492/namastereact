@@ -1,4 +1,4 @@
-import React from "react";
+import React,{lazy, Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import styles from "./App.css";
@@ -10,7 +10,9 @@ import AboutUs from "./components/AboutUs";
 import Error from "./components/Error";
 import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu";
-import UserClass from "./components/UserClass";
+// import GrossaryStore from "./components/GrossaryStore";
+
+const GrossaryStore =  lazy (()=>import ("./components/GrossaryStore"))
 
 const AppLayout = () => (
   <div>
@@ -36,6 +38,10 @@ const appRouter = createBrowserRouter([
       {
         path:"/cart",
         element: <Cart/>
+      },
+      {
+        path:"/grossary",
+        element: <Suspense><GrossaryStore/></Suspense>,
       },
       {
         path: "/contact",

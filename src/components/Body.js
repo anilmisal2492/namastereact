@@ -20,11 +20,7 @@ const Body = () => {
     );
 
     const jsonData = await data.json();
-    console.log(
-      "jsonData",
-      jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants
-    );
+
     setRestaurantList(
       jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
@@ -45,7 +41,7 @@ const Body = () => {
           type="text"
           value={searchText}
           onChange={(e) => {
-            console.log(e.target.value);
+
             setSearchText(e.target.value);
           }}
         ></input>{" "}
@@ -56,7 +52,7 @@ const Body = () => {
                 .toLowerCase()
                 .includes(searchText.toLocaleLowerCase());
             });
-            console.log("filterRestaurent", filterRestaurent);
+
             setFilterRestaurantList(filterRestaurent);
           }}
         >

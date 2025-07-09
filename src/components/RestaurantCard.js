@@ -1,5 +1,5 @@
 const RestaurantCard = (props) => {
-  console.log("Props",props);
+
   // const { name, cloudinaryImageId, costForTwo,cuisines, avgRating } = props.restData;
   const name = props.restData.info.name;
   const cloudinaryImageId = props.restData.info.cloudinaryImageId;
